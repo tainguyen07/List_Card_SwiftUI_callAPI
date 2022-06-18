@@ -34,28 +34,24 @@ class CardDetailViewModel: ObservableObject {
     var card: Card?
     func fetch() {
         let url = Const.host + "/user/" + (card?.id ?? "")
-        let headers: HTTPHeaders = ["Content-Type" : "application/json","app-id": Const.app_id]
-        
-        AF.request(url, method: .get , headers: headers).responseJSON{ (responseData) -> Void in
+        AF.request(url, method: .get , headers: Const.headers).responseJSON{ (responseData) -> Void in
             let json = JSON(responseData.value as Any)
             self.cardDetail = CardDetail(js: json)
         }
     }
     func delete() {
         let url = Const.host + "/user/" + (card?.id ?? "")
-        let headers: HTTPHeaders = ["Content-Type" : "application/json","app-id": Const.app_id]
         self.isProgress = true
-        AF.request(url, method: .delete , headers: headers).responseJSON{ (responseData) -> Void in
+        AF.request(url, method: .delete , headers: Const.headers).responseJSON{ (responseData) -> Void in
             self.isProgress = false
             self.isDelete = true
         }
     }
     func edit(firstName: String, lastName: String) {
         let url = Const.host + "/user/" + (card?.id ?? "")
-        let headers: HTTPHeaders = ["Content-Type" : "application/json","app-id": Const.app_id]
         let params = ["firstName": firstName,"lastName": lastName]
         self.isProgress = true
-        AF.request(url, method: .put , parameters: params, headers: headers).responseJSON{ (responseData) -> Void in
+        AF.request(url, method: .put , parameters: params, headers: Const.headers).responseJSON{ (responseData) -> Void in
             let json = JSON(responseData.value as Any)
             self.cardDetail = CardDetail(js: json)
             self.isProgress = false
