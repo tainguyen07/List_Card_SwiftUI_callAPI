@@ -8,17 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		227CD918285DD62C003912DB /* listCardSwiftUIAPIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227CD917285DD62C003912DB /* listCardSwiftUIAPIApp.swift */; };
-		227CD91A285DD62C003912DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227CD919285DD62C003912DB /* ContentView.swift */; };
+		227CD91A285DD62C003912DB /* ListCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227CD919285DD62C003912DB /* ListCardView.swift */; };
 		227CD91C285DD62D003912DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 227CD91B285DD62D003912DB /* Assets.xcassets */; };
 		227CD91F285DD62E003912DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 227CD91E285DD62D003912DB /* Preview Assets.xcassets */; };
+		227CD926285DD83E003912DB /* ListCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227CD925285DD83E003912DB /* ListCardViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		227CD914285DD62C003912DB /* listCardSwiftUIAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = listCardSwiftUIAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		227CD917285DD62C003912DB /* listCardSwiftUIAPIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listCardSwiftUIAPIApp.swift; sourceTree = "<group>"; };
-		227CD919285DD62C003912DB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		227CD919285DD62C003912DB /* ListCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCardView.swift; sourceTree = "<group>"; };
 		227CD91B285DD62D003912DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		227CD91E285DD62D003912DB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		227CD925285DD83E003912DB /* ListCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCardViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +54,8 @@
 			isa = PBXGroup;
 			children = (
 				227CD917285DD62C003912DB /* listCardSwiftUIAPIApp.swift */,
-				227CD919285DD62C003912DB /* ContentView.swift */,
+				227CD919285DD62C003912DB /* ListCardView.swift */,
+				227CD925285DD83E003912DB /* ListCardViewModel.swift */,
 				227CD91B285DD62D003912DB /* Assets.xcassets */,
 				227CD91D285DD62D003912DB /* Preview Content */,
 			);
@@ -137,7 +140,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				227CD91A285DD62C003912DB /* ContentView.swift in Sources */,
+				227CD91A285DD62C003912DB /* ListCardView.swift in Sources */,
+				227CD926285DD83E003912DB /* ListCardViewModel.swift in Sources */,
 				227CD918285DD62C003912DB /* listCardSwiftUIAPIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
