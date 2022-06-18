@@ -11,7 +11,7 @@ struct Card: Hashable, Codable {
     let image: String
 }
 class CardListViewModel: ObservableObject {
-    @Published var courses: [Card] = []
+    @Published var cards: [Card] = []
     func fetch() {
         guard let url = URL(string: " https://dummyapi.io/data/v1/user?page=1&limit=20") else {
             return
@@ -23,9 +23,9 @@ class CardListViewModel: ObservableObject {
             //Convert to JSON
             
             do {
-                let courses = try JSONDecoder().decode([Card].self, from: data)
+                let cards = try JSONDecoder().decode([Card].self, from: data)
                 DispatchQueue.main.async {
-                    self.courses = courses
+                    self.cards = cards
                 }
             } catch {
                 print(error)
