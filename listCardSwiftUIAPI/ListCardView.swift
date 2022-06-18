@@ -13,15 +13,18 @@ struct ListCardView: View {
         NavigationView {
             List {
                 ForEach(listCardViewModel.cards, id: \.self) { card in
-                    HStack {
-                        AsyncImage(url: URL(string: card.image))
-                            .scaledToFit()
-                            .frame(height: 70)
-                            .background(Color.gray)
-                        
-                        Text(card.firstName + " " + card.lastName)
-                            .bold()
+                    NavigationLink(destination: CardDetailView(card: card)) {
+                        HStack {
+                            AsyncImage(url: URL(string: card.image))
+                                .scaledToFit()
+                                .frame(height: 70)
+                                .background(Color.gray)
+                            
+                            Text(card.firstName + " " + card.lastName)
+                                .bold()
+                        }
                     }
+                    
                 }
             }
             .navigationTitle("List Card")
