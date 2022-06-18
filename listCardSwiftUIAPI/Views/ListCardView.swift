@@ -9,11 +9,18 @@ import SwiftUI
 
 struct ListCardView: View {
     @StateObject var listCardViewModel = ListCardViewModel()
-    
+    @State private var searchText = ""
+    var searchResults: [Card] {
+            if searchText.isEmpty {
+                return listCardViewModel.cards
+            } else {
+                return listCardViewModel.cards.filter { $0.firstName.contains(searchText) || $0.lastName.contains(searchText)}
+            }
+        }
     var body: some View {
         NavigationView {
             List {
-                ForEach(listCardViewModel.cards, id: \.self) { card in
+                ForEach(searchResults, id: \.self) { card in
                     NavigationLink(destination: CardDetailView(card: card)) {
                         HStack {
                             AsyncImage(url: URL(string: card.image))
@@ -32,6 +39,7 @@ struct ListCardView: View {
             .onAppear {
                 listCardViewModel.fetch()
             }
+            .searchable(text: $searchText)
         }
     }
 }
