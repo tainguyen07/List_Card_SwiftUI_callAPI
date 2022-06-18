@@ -18,7 +18,7 @@ struct ListCardView: View {
                             .frame(width: 130, height: 70)
                             .background(Color.gray)
                         
-                        Text(card.title)
+                        Text(card.firstName + " " + card.lastName)
                             .bold()
                     }
                 }
