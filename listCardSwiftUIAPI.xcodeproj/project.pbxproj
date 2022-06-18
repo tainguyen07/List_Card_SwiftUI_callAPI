@@ -13,6 +13,7 @@
 		227CD91F285DD62E003912DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 227CD91E285DD62D003912DB /* Preview Assets.xcassets */; };
 		227CD926285DD83E003912DB /* ListCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227CD925285DD83E003912DB /* ListCardViewModel.swift */; };
 		227CD929285DDEC8003912DB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 227CD928285DDEC8003912DB /* Alamofire */; };
+		227CD92C285DE0FA003912DB /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 227CD92B285DE0FA003912DB /* SwiftyJSON */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				227CD92C285DE0FA003912DB /* SwiftyJSON in Frameworks */,
 				227CD929285DDEC8003912DB /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,6 +92,7 @@
 			name = listCardSwiftUIAPI;
 			packageProductDependencies = (
 				227CD928285DDEC8003912DB /* Alamofire */,
+				227CD92B285DE0FA003912DB /* SwiftyJSON */,
 			);
 			productName = listCardSwiftUIAPI;
 			productReference = 227CD914285DD62C003912DB /* listCardSwiftUIAPI.app */;
@@ -121,6 +124,7 @@
 			mainGroup = 227CD90B285DD62C003912DB;
 			packageReferences = (
 				227CD927285DDEC8003912DB /* XCRemoteSwiftPackageReference "Alamofire" */,
+				227CD92A285DE0FA003912DB /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 227CD915285DD62C003912DB /* Products */;
 			projectDirPath = "";
@@ -361,6 +365,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		227CD92A285DE0FA003912DB /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -368,6 +380,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 227CD927285DDEC8003912DB /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		227CD92B285DE0FA003912DB /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 227CD92A285DE0FA003912DB /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
