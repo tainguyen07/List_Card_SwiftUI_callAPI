@@ -54,9 +54,11 @@ class CardDetailViewModel: ObservableObject {
         let url = Const.host + "/user/" + (card?.id ?? "")
         let headers: HTTPHeaders = ["Content-Type" : "application/json","app-id": "62ac5a8d8ff7aa66e8fe3a89"]
         let params = ["firstName": firstName,"lastName": lastName]
+        self.isProgress = true
         AF.request(url, method: .put , parameters: params, headers: headers).responseJSON{ (responseData) -> Void in
             let json = JSON(responseData.value as Any)
             self.cardDetail = CardDetail(js: json)
+            self.isProgress = false
         }
     }
 }
