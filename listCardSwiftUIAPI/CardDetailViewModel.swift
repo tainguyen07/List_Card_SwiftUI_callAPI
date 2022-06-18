@@ -1,42 +1,43 @@
 //
-//  ListCardViewModel.swift
+//  CardDetailViewModel.swift
 //  listCardSwiftUIAPI
 //
-//  Created by Tai Nguyen on 18/06/2022.
+//  Created by Tai Nguyen on 19/06/2022.
 //
 
 import Foundation
 import Alamofire
 import SwiftyJSON
-struct Card: Hashable {
+struct CardDetail: Hashable {
     let title: String
     let image: String
     let firstName: String
     let lastName: String
     let id: String
+    let email: String
+    let dateOfBirth: String
     init(js: JSON) {
         title = js["title"].stringValue
         image = js["picture"].stringValue
         firstName = js["firstName"].stringValue
         lastName = js["lastName"].stringValue
         id = js["id"].stringValue
+        email = js["email"].stringValue
+        dateOfBirth = js["dateOfBirth"].stringValue
     }
 }
 
-class ListCardViewModel: ObservableObject {
-    @Published var cards: [Card] = []
+class CardDetailViewModel: ObservableObject {
+    @Published var cardDetail: CardDetail?
+    var card: Card?
     func fetch() {
-        let url = "https://dummyapi.io/data/v1/user"
+        let url = "https://dummyapi.io/data/v1/user/" + (card?.id ?? "")
         let headers: HTTPHeaders = ["Content-Type" : "application/json","app-id": "62ac5a8d8ff7aa66e8fe3a89"]
         
         AF.request(url, method: .get , headers: headers).responseJSON{ (responseData) -> Void in
             let json = JSON(responseData.value as Any)
-            let data = json["data"].arrayValue
-            var tempCards: [Card] = []
-            data.forEach { js in
-                tempCards.append(Card(js: js))
-            }
-            self.cards = tempCards
+            self.cardDetail = CardDetail(js: json)
         }
     }
 }
+

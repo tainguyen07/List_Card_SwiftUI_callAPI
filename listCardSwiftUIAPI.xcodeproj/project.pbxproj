@@ -15,6 +15,7 @@
 		227CD929285DDEC8003912DB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 227CD928285DDEC8003912DB /* Alamofire */; };
 		227CD92C285DE0FA003912DB /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 227CD92B285DE0FA003912DB /* SwiftyJSON */; };
 		227CD92E285E0449003912DB /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227CD92D285E0449003912DB /* CardDetailView.swift */; };
+		227CD930285E47C7003912DB /* CardDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227CD92F285E47C7003912DB /* CardDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		227CD91E285DD62D003912DB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		227CD925285DD83E003912DB /* ListCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCardViewModel.swift; sourceTree = "<group>"; };
 		227CD92D285E0449003912DB /* CardDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
+		227CD92F285E47C7003912DB /* CardDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				227CD919285DD62C003912DB /* ListCardView.swift */,
 				227CD925285DD83E003912DB /* ListCardViewModel.swift */,
 				227CD92D285E0449003912DB /* CardDetailView.swift */,
+				227CD92F285E47C7003912DB /* CardDetailViewModel.swift */,
 				227CD91B285DD62D003912DB /* Assets.xcassets */,
 				227CD91D285DD62D003912DB /* Preview Content */,
 			);
@@ -158,6 +161,7 @@
 				227CD91A285DD62C003912DB /* ListCardView.swift in Sources */,
 				227CD926285DD83E003912DB /* ListCardViewModel.swift in Sources */,
 				227CD918285DD62C003912DB /* listCardSwiftUIAPIApp.swift in Sources */,
+				227CD930285E47C7003912DB /* CardDetailViewModel.swift in Sources */,
 				227CD92E285E0449003912DB /* CardDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

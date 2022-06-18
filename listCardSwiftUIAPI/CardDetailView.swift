@@ -8,17 +8,20 @@
 import SwiftUI
 import SwiftyJSON
 struct CardDetailView: View {
+    @StateObject var cardDetailViewModel = CardDetailViewModel()
     var card: Card
     var body: some View {
         VStack {
-            Image(card.image).resizable().scaledToFit().frame(height: 200).cornerRadius(4).padding(.vertical,12)
-            
-            VStack (alignment: .leading, spacing: 5) {
-                Text(card.title).fontWeight(.semibold).lineLimit(2).minimumScaleFactor(1)
-                
-                Text(card.title).font(.subheadline).foregroundColor(.secondary)
+            AsyncImage(url: URL(string: card.image))
+                .background(Color.white)
+            Text("First Name: " + (cardDetailViewModel.cardDetail?.firstName ?? "")).fontWeight(.semibold).lineLimit(2).minimumScaleFactor(1)
+            Text("Last Name: " + (cardDetailViewModel.cardDetail?.lastName ?? "")).fontWeight(.semibold).lineLimit(2).minimumScaleFactor(1)
+            Text("Email: " + (cardDetailViewModel.cardDetail?.email ?? "")).fontWeight(.semibold).lineLimit(2).minimumScaleFactor(1)
+            Text("Date Of Birth: " + (cardDetailViewModel.cardDetail?.dateOfBirth ?? "")).fontWeight(.semibold).lineLimit(2).minimumScaleFactor(1)
 
-            }
+        }.onAppear {
+            cardDetailViewModel.card = card
+            cardDetailViewModel.fetch()
         }
     }
 }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ListCardView: View {
     @StateObject var listCardViewModel = ListCardViewModel()
+    
     var body: some View {
         NavigationView {
             List {
