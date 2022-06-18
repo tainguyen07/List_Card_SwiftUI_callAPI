@@ -26,10 +26,9 @@ struct Card: Hashable {
 class ListCardViewModel: ObservableObject {
     @Published var cards: [Card] = []
     func fetch() {
-        let url = "https://dummyapi.io/data/v1/user"
         let headers: HTTPHeaders = ["Content-Type" : "application/json","app-id": "62ac5a8d8ff7aa66e8fe3a89"]
         
-        AF.request(url, method: .get , headers: headers).responseJSON{ (responseData) -> Void in
+        AF.request(Const.host + "/user", method: .get , headers: headers).responseJSON{ (responseData) -> Void in
             let json = JSON(responseData.value as Any)
             let data = json["data"].arrayValue
             var tempCards: [Card] = []

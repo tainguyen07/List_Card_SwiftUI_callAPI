@@ -31,7 +31,7 @@ class CardDetailViewModel: ObservableObject {
     @Published var cardDetail: CardDetail?
     var card: Card?
     func fetch() {
-        let url = "https://dummyapi.io/data/v1/user/" + (card?.id ?? "")
+        let url = Const.host + "/user/" + (card?.id ?? "")
         let headers: HTTPHeaders = ["Content-Type" : "application/json","app-id": "62ac5a8d8ff7aa66e8fe3a89"]
         
         AF.request(url, method: .get , headers: headers).responseJSON{ (responseData) -> Void in
