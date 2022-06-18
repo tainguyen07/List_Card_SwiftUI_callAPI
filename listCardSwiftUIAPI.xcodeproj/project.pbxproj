@@ -64,10 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				227CD917285DD62C003912DB /* listCardSwiftUIAPIApp.swift */,
-				227CD919285DD62C003912DB /* ListCardView.swift */,
-				227CD925285DD83E003912DB /* ListCardViewModel.swift */,
-				227CD92D285E0449003912DB /* CardDetailView.swift */,
-				227CD92F285E47C7003912DB /* CardDetailViewModel.swift */,
+				227CD935285E5083003912DB /* Views */,
+				227CD936285E508E003912DB /* ViewModels */,
 				227CD933285E4C8B003912DB /* Const.swift */,
 				227CD91B285DD62D003912DB /* Assets.xcassets */,
 				227CD91D285DD62D003912DB /* Preview Content */,
@@ -81,6 +79,24 @@
 				227CD91E285DD62D003912DB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		227CD935285E5083003912DB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				227CD919285DD62C003912DB /* ListCardView.swift */,
+				227CD92D285E0449003912DB /* CardDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		227CD936285E508E003912DB /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				227CD925285DD83E003912DB /* ListCardViewModel.swift */,
+				227CD92F285E47C7003912DB /* CardDetailViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
