@@ -18,10 +18,22 @@ struct CardDetailView: View {
             Text("Last Name: " + (cardDetailViewModel.cardDetail?.lastName ?? "")).fontWeight(.semibold).lineLimit(2).minimumScaleFactor(1)
             Text("Email: " + (cardDetailViewModel.cardDetail?.email ?? "")).fontWeight(.semibold).lineLimit(2).minimumScaleFactor(1)
             Text("Date Of Birth: " + (cardDetailViewModel.cardDetail?.dateOfBirth ?? "")).fontWeight(.semibold).lineLimit(2).minimumScaleFactor(1)
+            Spacer()
+            Button {
+                
+            } label: {
+                Text("DELETE")
+                    .foregroundColor(Color.red)
+                    .fontWeight(.heavy)
+            }
+
 
         }.onAppear {
             cardDetailViewModel.card = card
             cardDetailViewModel.fetch()
+        }
+        .toolbar {
+            EditButton()
         }
     }
 }
