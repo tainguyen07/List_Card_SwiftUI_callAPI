@@ -6,12 +6,12 @@
 //
 
 import Foundation
-struct Course: Hashable, Codable {
+struct Card: Hashable, Codable {
     let name: String
     let image: String
 }
 class CardListViewModel: ObservableObject {
-    @Published var courses: [Course] = []
+    @Published var courses: [Card] = []
     func fetch() {
         guard let url = URL(string: " https://dummyapi.io/data/v1/user?page=1&limit=20") else {
             return
@@ -23,7 +23,7 @@ class CardListViewModel: ObservableObject {
             //Convert to JSON
             
             do {
-                let courses = try JSONDecoder().decode([Course].self, from: data)
+                let courses = try JSONDecoder().decode([Card].self, from: data)
                 DispatchQueue.main.async {
                     self.courses = courses
                 }
