@@ -14,8 +14,9 @@ struct ListCardView: View {
             List {
                 ForEach(listCardViewModel.cards, id: \.self) { card in
                     HStack {
-                        Image("")
-                            .frame(width: 130, height: 70)
+                        AsyncImage(url: URL(string: card.image))
+                            .scaledToFit()
+                            .frame(height: 70)
                             .background(Color.gray)
                         
                         Text(card.firstName + " " + card.lastName)
